@@ -4,8 +4,11 @@ from PIL import Image, ImageEnhance
 from deskew import determine_skew
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+img = input("Enter image directory/name: (or enter for default image 'images/IMG_5670.jpg'")
+if img == "":
+    img = "images/IMG_5670.jpg"
 
-receiptImage = Image.open("images/IMG_5670.jpg")
+receiptImage = Image.open(img)
 
 def imageToBG(image, wPercentage):#, bPercentage):
     pixels = image.load()
